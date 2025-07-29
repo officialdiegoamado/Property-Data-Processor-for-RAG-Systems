@@ -1,0 +1,109 @@
+# Coral Gables Property Data Processing System - Configuration
+# This file contains all configurable parameters for the system
+
+# Input/Output Configuration
+input:
+  data_file: "CGProperties.json"
+  encoding: "utf-8"
+  max_file_size_mb: 100
+
+output:
+  base_directory: "split_output"
+  rag_directory: "rag_data"
+  reports_directory: "reports"
+  backup_directory: "backups"
+
+# Data Processing Configuration
+processing:
+  chunk_size: 100
+  records_per_file: 50
+  max_properties_per_story: 10
+  enable_parallel_processing: false
+  memory_limit_mb: 512
+
+# LLM Training Data Configuration
+llm_training:
+  qa_pairs:
+    max_pairs_per_property: 5
+    include_geographic_questions: true
+    include_financial_questions: true
+    include_administrative_questions: true
+  
+  rag_chunks:
+    chunk_size: 1000
+    overlap_size: 100
+    include_metadata: true
+  
+  property_stories:
+    include_coordinates: true
+    include_community_context: true
+    max_story_length: 2000
+
+# Data Analysis Configuration
+analysis:
+  enable_statistical_analysis: true
+  enable_visualization: false  # Requires matplotlib/pandas
+  generate_reports: true
+  include_field_analysis: true
+  
+  statistics:
+    include_ownership_analysis: true
+    include_zoning_analysis: true
+    include_value_analysis: true
+    include_year_built_analysis: true
+    include_neighborhood_analysis: true
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "processing.log"
+  max_file_size_mb: 10
+  backup_count: 5
+
+# Error Handling Configuration
+error_handling:
+  continue_on_error: true
+  log_errors: true
+  save_error_reports: true
+  max_errors_before_stop: 100
+
+# Performance Configuration
+performance:
+  enable_progress_bars: true
+  show_processing_time: true
+  memory_optimization: true
+  batch_processing_size: 1000
+
+# Data Validation Configuration
+validation:
+  validate_geojson_structure: true
+  check_required_fields: true
+  validate_coordinates: true
+  check_data_types: true
+
+# Field Mapping Configuration
+field_mapping:
+  address: "AddressPoints.ADDRESS"
+  owner: "AddressPoints.TRUE_OWNER"
+  zoning: "AddressPoints.PRIMARY_ZO"
+  year_built: "AddressPoints.BASE_YEAR"
+  building_value: "AddressPoints.BUILDING_V"
+  neighborhood: "AddressPoints.NEIGHBORHOOD"
+  municipality: "AddressPoints.MUNICIPALITY"
+  trash_route: "AddressPoints.TRASH_ROUTE"
+
+# Output Format Configuration
+output_formats:
+  json: true
+  jsonl: true
+  csv: true
+  yaml: false
+  xml: false
+
+# Backup Configuration
+backup:
+  create_backups: true
+  backup_frequency: "before_processing"
+  keep_backups: 3
+  compress_backups: true 

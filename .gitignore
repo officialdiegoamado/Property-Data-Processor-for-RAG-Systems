@@ -1,0 +1,115 @@
+# Coral Gables Property Data Processing System - Git Ignore
+
+# Data files (too large for version control)
+*.json
+!config.yaml
+!requirements.txt
+
+# Log files
+*.log
+logs/
+processing.log
+test.log
+
+# Output directories
+split_output/
+rag_data/
+reports/
+backups/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test files
+test_*.py
+*_test.py
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentation build
+docs/_build/
+docs/build/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Large processed files
+property_stories.jsonl
+property_qa_pairs.jsonl
+rag_chunks.jsonl
+search_queries.jsonl
+field_analysis.json
+
+# Backup files
+*.backup
+*.old
+*.orig
+
+# Error reports
+error_reports/
+*.error
+
+# Performance data
+*.prof
+*.profile
+
+# Memory dumps
+*.dump
+*.dmp 
